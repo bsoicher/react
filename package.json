@@ -12,6 +12,7 @@
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
     "react-login-github": "^1.0.8",
+    "react-persistent-state": "^1.1.13",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },

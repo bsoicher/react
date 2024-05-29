@@ -8,9 +8,11 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import LoginGithub from 'react-login-github';
 import Example from './modal.js';
 
+
+import ColorMode from './color.js';
+
 const onSuccess = response => console.log(response);
 const onFailure = response => console.error(response);
-
 
 
 function App() {
@@ -70,6 +72,8 @@ function App() {
           <Dropdown.Item href="#/action-4">Separated link</Dropdown.Item>
         </DropdownButton>
       
+        <ColorMode />
+
     </div>
 
   );
