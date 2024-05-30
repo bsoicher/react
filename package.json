@@ -2,8 +2,9 @@
   "name": "react-test",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://bsoicher.github.io/react",
+  "homepage": "https://bensoicher.com/react",
   "dependencies": {
+    "@primer/octicons-react": "^19.9.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -12,7 +13,6 @@
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
     "react-login-github": "^1.0.8",
-    "react-persistent-state": "^1.1.13",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
