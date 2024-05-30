@@ -7,28 +7,25 @@ import ThemeToggle from './ThemeToggle.js';
 
 
 function App() {
-  return (
-    <>
-      <Navbar className="border-bottom">
-        <Container>
-          <Navbar.Brand href="https://github.com/bsoicher">Ben Soicher</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-          </Nav>
-          <Nav>
-            <Navbar.Text>
-              <ThemeToggle />
-            </Navbar.Text>
-          </Nav>
-        </Container>
-      </Navbar>
-      <Container>
-        <br />
-        <Example />
-      </Container>
-    </>
-  );
+    return (
+        <>
+            <Navbar className="border-bottom">
+                <Container>
+                    <Navbar.Brand href="https://github.com/bsoicher">Ben Soicher</Navbar.Brand>
+                    <Nav className="me-auto">
+                        <Nav.Link href="#features">Features</Nav.Link>
+                        <Nav.Link href="#pricing">Pricing</Nav.Link>
+                        <ThemeToggle />
+                    </Nav>
+                    <ThemeToggle />
+                </Container>
+            </Navbar>
+            <Container>
+                <br />
+                <Example />
+            </Container>
+        </>
+    );
 }
 
 export default App;

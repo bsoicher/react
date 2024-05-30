@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { SunIcon, MoonIcon } from '@primer/octicons-react';
+import Nav from 'react-bootstrap/Nav';
 
 function ThemeToggle() {
     const store = localStorage.getItem('theme');
@@ -19,13 +20,13 @@ function ThemeToggle() {
     }, [theme]);
 
     return (
-        <a class="nav-link" href="#" onClick={toggleTheme} title="Change theme" className="py-0">
-            { theme === 'dark' ? (
+        <Nav.Link href="#" onClick={toggleTheme} title="Change theme" className="justify-content-start">
+            {theme === 'dark' ? (
                 <SunIcon size={24} className="text-light" />
             ) : (
                 <MoonIcon size={24} className="text-dark" />
             )}
-        </a>
+        </Nav.Link>
     )
 }
 
