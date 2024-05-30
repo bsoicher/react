@@ -23,7 +23,6 @@ function App() {
           </Nav>
         </Container>
       </Navbar>
-
       <Container>
         <br />
         <Example />
