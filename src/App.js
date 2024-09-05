@@ -2,34 +2,61 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-import Example from './modal.js';
-import ThemeToggle from './ThemeToggle.js';
 
-import { MarkGithubIcon, LogoGithubIcon } from '@primer/octicons-react';
+import ThemeSwitcher from './ThemeSwitcher.js';
+import Status from './Status.js';
+
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
+
+import { useState, useEffect } from 'react';
+import { MarkGithubIcon } from '@primer/octicons-react';
+
+
+import packageJson from '../package.json';
+
+import Load from './Load.js';
 
 function App() {
+
+    const [progress, setProgress] = useState(0);
+    const [status, setStatus] = useState('starting');
+
+
     return (
         <>
             <Navbar className="border-bottom">
                 <Container>
                     <Navbar.Brand href="https://github.com/bsoicher">Ben Soicher</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
+                        <Nav.Link href="#home">Test</Nav.Link>
                     </Nav>
-
                     <Nav>
-                        <Nav.Link>Sign in with GitHub</Nav.Link>
-                        <ThemeToggle />
+
+                        <OverlayTrigger placement="bottom" overlay={<Tooltip>View project on GitHub</Tooltip>}>
+                            <Nav.Link href={packageJson.homepage} target="_blank">
+                                <MarkGithubIcon size={22} />
+                            </Nav.Link>
+                        </OverlayTrigger>
+
+                        <ThemeSwitcher />
                     </Nav>
                 </Container>
             </Navbar>
+
+
             <Container>
+                <h1>Resources</h1>
+
                 <br />
-                <Example />
+               
+                <Status message="Loading resources" percent={30} />
+                <Load />
             </Container>
         </>
     );
 }
+
+
 
 export default App;
