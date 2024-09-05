@@ -9,7 +9,7 @@ import Status from './Status.js';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 
-import { useState, useEffect } from 'react';
+
 import { MarkGithubIcon } from '@primer/octicons-react';
 
 
@@ -19,8 +19,6 @@ import Load from './Load.js';
 
 function App() {
 
-    const [progress, setProgress] = useState(0);
-    const [status, setStatus] = useState('starting');
 
 
     return (
