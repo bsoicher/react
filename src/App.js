@@ -20,7 +20,6 @@ import Load from './Load.js';
 function App() {
 
 
-
     return (
         <>
             <Navbar className="border-bottom">
@@ -32,7 +31,7 @@ function App() {
                     <Nav>
 
                         <OverlayTrigger placement="bottom" overlay={<Tooltip>View project on GitHub</Tooltip>}>
-                            <Nav.Link href="https://github.com/bsoicher/react" target="_blank">
+                            <Nav.Link href={packageJson.repository.url.replace('.git', '')} target="_blank">
                                 <MarkGithubIcon size={22} />
                             </Nav.Link>
                         </OverlayTrigger>

@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://bensoicher.com/react",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bsoicher/react.git" 
+  },
   "dependencies": {
     "@primer/octicons-react": "^19.9.0",
     "@testing-library/jest-dom": "^5.17.0",
