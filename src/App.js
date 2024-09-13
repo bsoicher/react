@@ -15,7 +15,8 @@ import { MarkGithubIcon } from '@primer/octicons-react';
 
 import packageJson from '../package.json';
 
-import Load from './Load.js';
+import AsyncStatusUpdater from './AsyncStatusUpdater.js';
+
 
 function App() {
 
@@ -26,7 +27,7 @@ function App() {
                 <Container>
                     <Navbar.Brand href="https://github.com/bsoicher">Ben Soicher</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Test</Nav.Link>
+                        <Nav.Link href="#home"> Test</Nav.Link>
                     </Nav>
                     <Nav>
 
@@ -43,12 +44,11 @@ function App() {
 
 
             <Container>
-                <h1>Resources</h1>
+                <h1>Async application</h1>
 
                 <br />
-               
-                <Status message="Loading resources" percent={30} />
-                <Load />
+            
+                <AsyncStatusUpdater />
             </Container>
         </>
     );
