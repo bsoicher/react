@@ -1,17 +1,18 @@
 
-import ProgressBar from 'react-bootstrap/ProgressBar';
+import { ProgressBar } from '@primer/react';
 
 function Status({ className, message = '', percent = 0 }) {
     return (
-        <>
-            <ProgressBar>
-                <ProgressBar variant="success" now={percent} />
-                <ProgressBar variant="info" now={20} />
-                <ProgressBar variant="danger" now={2} />
-            </ProgressBar>
+        <ProgressBar aria-valuenow={percent} aria-label="Upload test.png">
+            <ProgressBar.Item progress={percent} />
+            <ProgressBar.Item
+                progress={percent}
+                sx={{
+                    backgroundColor: 'danger.emphasis',
+                }}
+            />
             
-            <p>{message}</p>
-        </>
+        </ProgressBar>
     );
 }
 

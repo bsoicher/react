@@ -1,56 +1,42 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-
-
-import ThemeSwitcher from './ThemeSwitcher.js';
-import Status from './Status.js';
-
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Tooltip from 'react-bootstrap/Tooltip';
 
 
 import { MarkGithubIcon } from '@primer/octicons-react';
 
-
-import packageJson from '../package.json';
-
 import AsyncStatusUpdater from './AsyncStatusUpdater.js';
 
+import { Header, Octicon, Avatar, PageLayout } from '@primer/react';
+
+import { ThemeProvider, BaseStyles } from '@primer/react'
 
 function App() {
 
 
     return (
-        <>
-            <Navbar className="border-bottom">
-                <Container>
-                    <Navbar.Brand href="https://github.com/bsoicher">Ben Soicher</Navbar.Brand>
-                    <Nav className="me-auto">
-                        <Nav.Link href="#home"> Test</Nav.Link>
-                    </Nav>
-                    <Nav>
+        <ThemeProvider colorMode="light">
+            <BaseStyles>
+                <Header sx={{ bg: 'gray.1' }}>
+                    <Header.Item full>
+                        <Octicon icon={MarkGithubIcon} size={24} sx={{ mr: 2 }} />
+                        <Header.Link href="https://github.com/bsoicher">bsoicher</Header.Link>
+                    </Header.Item>
+                    <Header.Item sx={{ mr: 0 }}>
+                        <Avatar src="https://github.com/octocat.png" size={32} alt="@octocat" />
+                    </Header.Item>
+                </Header>
+                <PageLayout containerWidth={'xlarge'} sx={{ mr: 2 }}>
+                    <PageLayout.Content>
+                        <h1>Async application</h1>
 
-                        <OverlayTrigger placement="bottom" overlay={<Tooltip>View project on GitHub</Tooltip>}>
-                            <Nav.Link href={packageJson.repository.url.replace('.git', '')} target="_blank">
-                                <MarkGithubIcon size={22} />
-                            </Nav.Link>
-                        </OverlayTrigger>
+                        <p>
+                            This is a simple application that demonstrates async task management with React.
+                        </p>
+                        <br />
 
-                        <ThemeSwitcher />
-                    </Nav>
-                </Container>
-            </Navbar>
-
-
-            <Container>
-                <h1>Async application</h1>
-
-                <br />
-            
-                <AsyncStatusUpdater />
-            </Container>
-        </>
+                        <AsyncStatusUpdater />
+                    </PageLayout.Content>
+                </PageLayout>
+            </BaseStyles>
+        </ThemeProvider>
     );
 }
 
